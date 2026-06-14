@@ -1,25 +1,37 @@
-/* Mengatur latar belakang halaman web */
+/* Mengunci layar agar tidak bisa di-scroll ke bawah dan memberi background gelap agar elegan */
 body {
     margin: 0;
     padding: 0;
-    background-color: #e9ecef;
+    background-color: #1a1a1a; 
     display: flex;
-    flex-direction: column;
     align-items: center;
+    height: 100vh; /* Memenuhi 100% tinggi layar */
+    overflow: hidden; /* Mematikan scroll vertikal (atas-bawah) */
     font-family: Arial, sans-serif;
 }
 
-/* Mengatur batas lebar portofolio agar pas di layar dan diberi efek bayangan premium */
+/* Mengatur wadah gambar agar memanjang ke samping */
 .portfolio-container {
+    display: flex;
+    flex-direction: row; /* Mengubah arah susunan menjadi ke samping */
     width: 100%;
-    max-width: 1200px;
-    background-color: #ffffff;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    height: 100%;
+    overflow-x: auto; /* Mengaktifkan scroll horizontal (kiri-kanan) */
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory; /* Fitur ajaib agar saat digeser, gambar otomatis "nge-snap" atau pas berhenti di tengah */
+    -webkit-overflow-scrolling: touch; /* Membuat usapan di layar HP terasa mulus */
+    scrollbar-width: none; /* Menyembunyikan garis scrollbar di Firefox */
 }
 
-/* Memastikan gambar merespons ukuran layar dan menyambung tanpa garis putih */
+/* Menyembunyikan garis scrollbar di Chrome/Safari agar tampilannya bersih seperti aplikasi */
+.portfolio-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Mengatur ukuran masing-masing gambar */
 img {
-    width: 100%;
-    height: auto;
-    display: block;
+    flex: 0 0 100vw; /* Memaksa setiap gambar mengambil lebar 100% layar (100 Viewport Width) */
+    height: 100%;
+    object-fit: contain; /* Memastikan seluruh gambar masuk ke layar tanpa terpotong */
+    scroll-snap-align: center; /* Memastikan posisi berhenti ada di tengah layar */
 }
