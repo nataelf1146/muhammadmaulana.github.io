@@ -3,9 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Muhammad Maulana | Portfolio</title>
+
+  <title>Muhammad Maulana | Operations & Risk Specialist</title>
+
+  <meta name="description" content="Professional portfolio of Muhammad Maulana, Operations & Risk Specialist with experience in banking operations, AML/KYC, transaction monitoring, project documentation, SLA support, and operational reporting." />
+  <meta name="keywords" content="Muhammad Maulana, Operations Specialist, Risk Specialist, AML, KYC, CDD, EDD, Transaction Monitoring, Document Control, Jira, Silverlake, NetReveal" />
+  <meta name="author" content="Muhammad Maulana" />
 
   <style>
+    :root {
+      --primary: #004aad;
+      --primary-dark: #003580;
+      --dark: #0f172a;
+      --text: #334155;
+      --muted: #64748b;
+      --light: #f5f8ff;
+      --white: #ffffff;
+      --border: #e2e8f0;
+      --soft-blue: #e8f1ff;
+      --shadow: 0 12px 35px rgba(15, 23, 42, 0.08);
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -13,40 +31,101 @@
       font-family: Arial, Helvetica, sans-serif;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      background: #f5f8ff;
-      color: #0f172a;
+      background: var(--light);
+      color: var(--dark);
       line-height: 1.7;
     }
 
     a {
-      text-decoration: none;
       color: inherit;
+      text-decoration: none;
     }
 
     .container {
       width: 90%;
-      max-width: 1100px;
+      max-width: 1120px;
       margin: auto;
     }
 
+    /* NAVBAR */
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-wrapper {
+      min-height: 72px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .logo {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--primary);
+      letter-spacing: 0.3px;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .nav-menu a:hover {
+      color: var(--primary);
+    }
+
+    .nav-cta {
+      padding: 9px 16px;
+      background: var(--primary);
+      color: var(--white) !important;
+      border-radius: 999px;
+    }
+
+    /* HERO */
     header {
-      background: linear-gradient(135deg, #004aad, #003580);
-      color: white;
-      padding: 80px 0;
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      color: var(--white);
+      padding: 88px 0;
     }
 
     .hero {
       display: grid;
       grid-template-columns: 1.2fr 0.8fr;
-      gap: 40px;
+      gap: 42px;
       align-items: center;
+    }
+
+    .hero-label {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 20px;
     }
 
     .hero h1 {
       font-size: 56px;
-      line-height: 1.1;
-      margin-bottom: 15px;
+      line-height: 1.08;
+      margin-bottom: 16px;
       text-transform: uppercase;
       letter-spacing: 1px;
     }
@@ -54,285 +133,454 @@
     .hero h2 {
       font-size: 22px;
       font-weight: 500;
-      margin-bottom: 20px;
       color: #dbeafe;
+      margin-bottom: 22px;
     }
 
     .hero p {
+      max-width: 700px;
       font-size: 17px;
-      max-width: 650px;
       color: #eef4ff;
-      text-align: justify;
-      text-justify: inter-word;
-    }
-
-    .hero-card {
-      background: white;
-      color: #004aad;
-      border-radius: 24px;
-      padding: 30px;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.15);
-      text-align: center;
-    }
-
-    .profile-photo {
-      width: 230px;
-      height: 230px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 6px solid #004aad;
-      box-shadow: 0 18px 40px rgba(0,0,0,0.18);
-      display: block;
-      margin: 0 auto 25px auto;
-      background: #e2e8f0;
-    }
-
-    .hero-card h3 {
-      font-size: 24px;
-      margin-bottom: 15px;
-    }
-
-    .hero-card p {
-      color: #334155;
-      font-size: 15px;
-      text-align: justify;
-      text-justify: inter-word;
+      line-height: 1.85;
     }
 
     .btn-group {
-      margin-top: 30px;
       display: flex;
-      gap: 15px;
       flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 30px;
     }
 
     .btn {
+      display: inline-block;
       padding: 12px 22px;
       border-radius: 999px;
-      background: white;
-      color: #004aad;
-      font-weight: bold;
-      border: 2px solid white;
-      transition: 0.3s;
-      display: inline-block;
+      font-weight: 800;
+      border: 2px solid var(--white);
+      background: var(--white);
+      color: var(--primary);
+      transition: 0.25s ease;
     }
 
     .btn:hover {
-      background: transparent;
-      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
     }
 
     .btn-outline {
       background: transparent;
-      color: white;
+      color: var(--white);
     }
 
     .btn-outline:hover {
-      background: white;
-      color: #004aad;
+      background: var(--white);
+      color: var(--primary);
     }
 
+    .hero-card {
+      background: var(--white);
+      color: var(--dark);
+      padding: 32px;
+      border-radius: 28px;
+      text-align: center;
+      box-shadow: 0 22px 55px rgba(0, 0, 0, 0.18);
+    }
+
+    .profile-photo-wrap {
+      width: 240px;
+      height: 240px;
+      margin: 0 auto 24px;
+      border-radius: 50%;
+      border: 6px solid var(--primary);
+      overflow: hidden;
+      background: #dbeafe;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
+    }
+
+    .profile-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      transform: scale(1.15);
+      display: block;
+    }
+
+    .hero-card h3 {
+      color: var(--primary);
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+
+    .hero-card p {
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.8;
+      max-width: 100%;
+    }
+
+    .quick-info {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+      text-align: left;
+      font-size: 14px;
+      color: var(--text);
+    }
+
+    .quick-info span {
+      display: block;
+      background: var(--soft-blue);
+      padding: 10px 14px;
+      border-radius: 14px;
+    }
+
+    /* GENERAL SECTION */
     section {
-      padding: 70px 0;
+      padding: 76px 0;
+    }
+
+    .section-header {
+      margin-bottom: 36px;
+    }
+
+    .section-kicker {
+      color: var(--primary);
+      font-size: 13px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      margin-bottom: 8px;
     }
 
     .section-title {
       font-size: 38px;
-      color: #004aad;
-      margin-bottom: 15px;
+      line-height: 1.2;
+      color: var(--dark);
+      margin-bottom: 14px;
       text-transform: uppercase;
     }
 
     .section-subtitle {
-      max-width: 750px;
-      color: #475569;
-      margin-bottom: 35px;
-      text-align: justify;
-      text-justify: inter-word;
+      max-width: 780px;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .blue-section {
+      background: var(--primary);
+      color: var(--white);
+    }
+
+    .blue-section .section-kicker,
+    .blue-section .section-title,
+    .blue-section .section-subtitle {
+      color: var(--white);
     }
 
     .grid-2 {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 25px;
+      gap: 24px;
     }
 
     .grid-3 {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
+      gap: 24px;
     }
 
     .card {
-      background: white;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 22px;
       padding: 28px;
-      border-radius: 20px;
-      box-shadow: 0 10px 35px rgba(15, 23, 42, 0.08);
-      border: 1px solid #e2e8f0;
+      box-shadow: var(--shadow);
     }
 
     .card h3 {
-      color: #004aad;
+      color: var(--primary);
       font-size: 22px;
       margin-bottom: 10px;
+      line-height: 1.35;
     }
 
     .card h4 {
-      color: #1e293b;
+      color: var(--dark);
       font-size: 16px;
-      margin-bottom: 15px;
-      font-weight: 600;
+      margin-bottom: 14px;
+      font-weight: 700;
+      line-height: 1.5;
     }
 
     .card p {
-      color: #475569;
+      color: var(--text);
       font-size: 15px;
-      text-align: justify;
-      text-justify: inter-word;
+      line-height: 1.85;
     }
 
     .card ul {
-      margin-top: 12px;
+      margin-top: 14px;
       padding-left: 20px;
-      color: #475569;
+      color: var(--text);
       font-size: 15px;
     }
 
     .card li {
-      margin-bottom: 8px;
-    }
-
-    .blue-section {
-      background: #004aad;
-      color: white;
-    }
-
-    .blue-section .section-title,
-    .blue-section .section-subtitle {
-      color: white;
+      margin-bottom: 9px;
+      line-height: 1.6;
     }
 
     .blue-section .card {
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.2);
-      color: white;
+      background: rgba(255, 255, 255, 0.10);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      box-shadow: none;
     }
 
     .blue-section .card h3,
     .blue-section .card h4,
     .blue-section .card p,
     .blue-section .card ul {
-      color: white;
+      color: var(--white);
+    }
+
+    /* ABOUT */
+    .about-highlight {
+      background: var(--white);
+      border-left: 6px solid var(--primary);
+      border-radius: 22px;
+      padding: 30px;
+      box-shadow: var(--shadow);
+      margin-bottom: 24px;
+    }
+
+    .about-highlight p {
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.85;
+    }
+
+    /* EXPERIENCE */
+    .timeline {
+      display: grid;
+      gap: 24px;
+    }
+
+    .timeline-card {
+      position: relative;
+      border-left: 5px solid var(--white);
+    }
+
+    .timeline-card .period {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.18);
+      color: var(--white);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    /* TAGS */
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
     }
 
     .tag {
       display: inline-block;
-      background: #e0ecff;
-      color: #004aad;
-      padding: 7px 14px;
+      background: var(--soft-blue);
+      color: var(--primary);
+      padding: 7px 13px;
       border-radius: 999px;
       font-size: 13px;
-      font-weight: bold;
-      margin: 5px 5px 5px 0;
+      font-weight: 800;
     }
 
-    .timeline-item {
-      border-left: 4px solid white;
-      padding-left: 22px;
-      margin-bottom: 25px;
+    /* ACHIEVEMENT */
+    .metric {
+      font-size: 38px;
+      font-weight: 900;
+      color: var(--primary);
+      margin-bottom: 8px;
     }
 
+    .blue-section .metric {
+      color: var(--white);
+    }
+
+    /* CONTACT */
     .contact-box {
+      background: var(--white);
+      border-radius: 28px;
+      padding: 44px;
+      box-shadow: var(--shadow);
       text-align: center;
-      background: white;
-      padding: 45px;
-      border-radius: 24px;
-      box-shadow: 0 10px 35px rgba(15, 23, 42, 0.08);
     }
 
     .contact-box h2 {
-      font-size: 36px;
-      color: #004aad;
-      margin-bottom: 15px;
+      color: var(--primary);
+      font-size: 38px;
+      margin-bottom: 14px;
     }
 
-    .contact-box p {
-      color: #475569;
+    .contact-box > p {
+      color: var(--muted);
+      max-width: 760px;
+      margin: 0 auto;
+      line-height: 1.8;
     }
 
     .contact-info {
-      margin: 25px 0;
-      color: #334155;
-      font-size: 17px;
+      margin: 28px auto 0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+      max-width: 760px;
+      text-align: left;
     }
 
-    .contact-info p {
-      margin-bottom: 10px;
-      text-align: center;
+    .contact-item {
+      background: var(--light);
+      border: 1px solid var(--border);
+      padding: 16px;
+      border-radius: 18px;
     }
 
-    .contact-info a {
-      color: #004aad;
-      font-weight: bold;
-    }
-
-    .contact-info a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      background: #0f172a;
-      color: white;
-      text-align: center;
-      padding: 25px;
+    .contact-item strong {
+      display: block;
+      color: var(--dark);
+      margin-bottom: 4px;
       font-size: 14px;
     }
 
-    @media (max-width: 768px) {
+    .contact-item a {
+      color: var(--primary);
+      font-weight: 800;
+      word-break: break-word;
+    }
+
+    .contact-item a:hover {
+      text-decoration: underline;
+    }
+
+    .contact-buttons {
+      justify-content: center;
+      margin-top: 28px;
+    }
+
+    .contact-buttons .btn {
+      border-color: var(--primary);
+      background: var(--primary);
+      color: var(--white);
+    }
+
+    .contact-buttons .btn.secondary {
+      background: var(--white);
+      color: var(--primary);
+    }
+
+    footer {
+      background: var(--dark);
+      color: var(--white);
+      text-align: center;
+      padding: 26px;
+      font-size: 14px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .nav-wrapper {
+        flex-direction: column;
+        padding: 16px 0;
+      }
+
+      .nav-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 14px;
+      }
+
       .hero,
       .grid-2,
-      .grid-3 {
+      .grid-3,
+      .contact-info {
         grid-template-columns: 1fr;
       }
 
       .hero h1 {
-        font-size: 40px;
+        font-size: 42px;
       }
 
       .hero h2 {
         font-size: 19px;
       }
 
-      .hero p,
-      .hero-card p,
-      .section-subtitle,
-      .card p {
-        text-align: left;
+      header {
+        padding: 58px 0;
+      }
+
+      section {
+        padding: 56px 0;
       }
 
       .section-title {
         font-size: 30px;
       }
 
-      header {
-        padding: 55px 0;
-      }
-
-      section {
-        padding: 50px 0;
+      .profile-photo-wrap {
+        width: 220px;
+        height: 220px;
       }
 
       .contact-box {
         padding: 30px 20px;
       }
 
-      .profile-photo {
-        width: 200px;
-        height: 200px;
-      }
-
       .btn-group {
         justify-content: flex-start;
+      }
+
+      .contact-buttons {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .nav-menu {
+        font-size: 13px;
+      }
+
+      .nav-cta {
+        padding: 8px 13px;
+      }
+
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      .hero p,
+      .card p,
+      .section-subtitle {
+        font-size: 15px;
+      }
+
+      .profile-photo-wrap {
+        width: 205px;
+        height: 205px;
+      }
+
+      .card {
+        padding: 22px;
+      }
+
+      .contact-box h2 {
+        font-size: 30px;
       }
     }
   </style>
@@ -340,12 +588,32 @@
 
 <body>
 
-  <!-- HERO SECTION -->
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="container nav-wrapper">
+      <a href="#" class="logo">Muhammad Maulana</a>
+
+      <div class="nav-menu">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Case Studies</a>
+        <a href="#achievement">Achievement</a>
+        <a href="#contact" class="nav-cta">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
   <header>
     <div class="container hero">
       <div>
+        <span class="hero-label">Operations • Risk • Compliance • Document Control</span>
+
         <h1>Muhammad Maulana</h1>
+
         <h2>Operations & Risk Specialist | Leader Document Control Project</h2>
+
         <p>
           Operations, Risk & Compliance Specialist with over 6 years of experience in banking operations,
           AML/KYC verification, transaction monitoring, project documentation management, and operational excellence.
@@ -355,18 +623,28 @@
 
         <div class="btn-group">
           <a href="#contact" class="btn">Contact Me</a>
-          <a href="#projects" class="btn btn-outline">View Case Studies</a>
+          <a href="CV-Muhammad-Maulana.pdf" target="_blank" class="btn btn-outline">Download CV</a>
+          <a href="Portfolio-Muhammad-Maulana.pdf" target="_blank" class="btn btn-outline">Download Portfolio</a>
         </div>
       </div>
 
       <div class="hero-card">
-        <img src="profile.png" alt="Muhammad Maulana Profile Photo" class="profile-photo">
+        <div class="profile-photo-wrap">
+          <img src="profile.png" alt="Muhammad Maulana Profile Photo" class="profile-photo">
+        </div>
 
         <h3>Professional Focus</h3>
+
         <p>
           Banking Operations, AML/KYC, CDD/EDD, Transaction Monitoring, Project Documentation,
           SLA Support, Risk-Based Monitoring, Jira Tracking, and Operational Reporting.
         </p>
+
+        <div class="quick-info">
+          <span><strong>Experience:</strong> 6+ Years</span>
+          <span><strong>Industry:</strong> Banking, IT & Financial Technology</span>
+          <span><strong>Tools:</strong> Jira, NetReveal, Silverlake, Excel, Power BI</span>
+        </div>
       </div>
     </div>
   </header>
@@ -374,27 +652,45 @@
   <!-- ABOUT -->
   <section id="about">
     <div class="container">
-      <h2 class="section-title">About Me</h2>
-      <p class="section-subtitle">
-        Operations Specialist with over 6 years of experience specializing in data integrity,
-        risk-based monitoring, and operational excellence within the banking and IT sectors.
-      </p>
+      <div class="section-header">
+        <p class="section-kicker">About Me</p>
+        <h2 class="section-title">Professional Summary</h2>
+        <p class="section-subtitle">
+          A structured operations professional with strong experience in data integrity, risk-based monitoring,
+          project documentation, compliance support, and operational governance.
+        </p>
+      </div>
+
+      <div class="about-highlight">
+        <p>
+          I have extensive experience managing large-scale project documentation for 290+ technicians and supporting
+          managed service operations for Tier-1 financial institutions. My work focuses on documentation governance,
+          SLA adherence, quality control, stakeholder coordination, compliance documentation, and accurate operational
+          reporting.
+        </p>
+      </div>
 
       <div class="grid-2">
         <div class="card">
-          <h3>Professional Summary</h3>
+          <h3>Operational Strength</h3>
           <p>
-            Experienced in managing large-scale project documentation for 290+ technicians and overseeing
-            managed service operations for Tier-1 financial institutions. Strong background in documentation
-            governance, SLA adherence, quality control, and stakeholder coordination.
+            Skilled in using operational and reporting tools to improve workflow efficiency, ensure proper documentation
+            tracking, and support accurate operational data management.
           </p>
+          <ul>
+            <li>Jira for project tracking and documentation monitoring</li>
+            <li>NetReveal and Silverlake for banking operations support</li>
+            <li>Advanced Excel and Power BI for reporting and data analysis</li>
+            <li>Microsoft Office and Google Workspace for operational documentation</li>
+          </ul>
         </div>
 
         <div class="card">
-          <h3>Operational Strength</h3>
+          <h3>Professional Value</h3>
           <p>
-            Skilled in utilizing Jira, NetReveal, Silverlake, Advanced Excel, Power BI, Microsoft Office,
-            and Google Workspace to improve workflow efficiency, maintain audit trails, and ensure high data accuracy.
+            Strong ability to support high-volume operational processes, maintain documentation accuracy,
+            coordinate with stakeholders, and ensure work outputs are aligned with SLA, compliance, and audit
+            requirements.
           </p>
         </div>
       </div>
@@ -404,18 +700,22 @@
   <!-- EDUCATION -->
   <section class="blue-section" id="education">
     <div class="container">
-      <h2 class="section-title">Education</h2>
-      <p class="section-subtitle">
-        Academic and professional development background supporting operational, technical, and compliance expertise.
-      </p>
+      <div class="section-header">
+        <p class="section-kicker">Education</p>
+        <h2 class="section-title">Academic & Professional Development</h2>
+        <p class="section-subtitle">
+          Education and professional training background supporting operational, technical, legal, and compliance
+          capabilities.
+        </p>
+      </div>
 
       <div class="grid-2">
         <div class="card">
           <h3>Open University of Indonesia</h3>
           <h4>Bachelor of Information Systems</h4>
           <p>
-            Currently pursuing a Bachelor of Information Systems to further integrate technical analysis
-            with operational risk management.
+            Currently pursuing a Bachelor of Information Systems to further integrate technical analysis with
+            operational risk management and business process improvement.
           </p>
         </div>
 
@@ -423,8 +723,8 @@
           <h3>Professional Development</h3>
           <h4>Certified Corporate Legal Expert / CCLE Training</h4>
           <p>
-            Completed intensive professional training to strengthen expertise in corporate legal frameworks,
-            regulatory compliance, and risk management.
+            Completed intensive professional training to strengthen knowledge in corporate legal frameworks,
+            regulatory compliance, governance, and risk management.
           </p>
         </div>
       </div>
@@ -434,11 +734,14 @@
   <!-- SKILLS -->
   <section id="skills">
     <div class="container">
-      <h2 class="section-title">My Skills</h2>
-      <p class="section-subtitle">
-        Core expertise built from professional experience in operations, risk monitoring,
-        compliance support, project coordination, and documentation governance.
-      </p>
+      <div class="section-header">
+        <p class="section-kicker">Skills</p>
+        <h2 class="section-title">Core Competencies</h2>
+        <p class="section-subtitle">
+          Core expertise built from professional experience in operations, risk monitoring, compliance support,
+          project coordination, and documentation governance.
+        </p>
+      </div>
 
       <div class="grid-3">
         <div class="card">
@@ -446,9 +749,10 @@
           <ul>
             <li>Project Coordination for 290+ Personnel</li>
             <li>Documentation Management</li>
-            <li>SLA Adherence</li>
-            <li>Stakeholder Management</li>
+            <li>SLA Monitoring & Adherence</li>
+            <li>Stakeholder Coordination</li>
             <li>Operational Reporting</li>
+            <li>Quality Control & Data Checking</li>
           </ul>
         </div>
 
@@ -458,7 +762,8 @@
             <li>Risk-Based Monitoring</li>
             <li>Fraud Detection Support</li>
             <li>KYC/AML Procedures</li>
-            <li>CDD & EDD Review</li>
+            <li>Customer Due Diligence / CDD</li>
+            <li>Enhanced Due Diligence / EDD</li>
             <li>Audit Trail Preparation</li>
           </ul>
         </div>
@@ -479,33 +784,40 @@
     </div>
   </section>
 
-  <!-- WORK EXPERIENCE -->
+  <!-- EXPERIENCE -->
   <section class="blue-section" id="experience">
     <div class="container">
-      <h2 class="section-title">Work Experience</h2>
-      <p class="section-subtitle">
-        Professional experience in banking operations, anti-financial crime operations,
-        and project document control.
-      </p>
-
-      <div class="card timeline-item">
-        <h3>AFC Operation</h3>
-        <h4>Bank UOB Indonesia | Dec 2025 - Present</h4>
-        <p>
-          Orchestrated complex risk-based transaction monitoring and fraud detection using NetReveal and Silverlake.
-          Executed CDD/EDD for high-risk profiles, ensured AML/KYC regulatory compliance, and optimized workflows
-          to accelerate case resolution.
+      <div class="section-header">
+        <p class="section-kicker">Work Experience</p>
+        <h2 class="section-title">Professional Experience</h2>
+        <p class="section-subtitle">
+          Professional background in banking operations, anti-financial crime operations, managed service support,
+          and project document control.
         </p>
       </div>
 
-      <div class="card timeline-item">
-        <h3>Leader Document Control Project</h3>
-        <h4>Citius Solusi Indonesia | Oct 2023 - Dec 2025</h4>
-        <p>
-          Spearheaded end-to-end documentation management for banking managed services, overseeing 290+ technicians
-          across Indonesia. Utilized Jira for project tracking, improved administrative reporting, and reduced audit
-          findings through structured quality control.
-        </p>
+      <div class="timeline">
+        <div class="card timeline-card">
+          <span class="period">Dec 2025 - Present</span>
+          <h3>AFC Operation</h3>
+          <h4>Bank UOB Indonesia</h4>
+          <p>
+            Orchestrated complex risk-based transaction monitoring and fraud detection using NetReveal and Silverlake.
+            Executed CDD/EDD for high-risk profiles, ensured AML/KYC regulatory compliance, and optimized workflows
+            to support faster case resolution and structured review processes.
+          </p>
+        </div>
+
+        <div class="card timeline-card">
+          <span class="period">Oct 2023 - Dec 2025</span>
+          <h3>Leader Document Control Project</h3>
+          <h4>Citius Solusi Indonesia</h4>
+          <p>
+            Spearheaded end-to-end documentation management for banking managed services, overseeing 290+ technicians
+            across Indonesia. Utilized Jira for project tracking, improved administrative reporting, and reduced audit
+            findings through structured quality control.
+          </p>
+        </div>
       </div>
     </div>
   </section>
@@ -513,45 +825,46 @@
   <!-- PROJECTS -->
   <section id="projects">
     <div class="container">
-      <h2 class="section-title">Professional Projects & Case Studies</h2>
-      <p class="section-subtitle">
-        Selected professional case studies based on operational, compliance, documentation,
-        and managed service responsibilities handled during professional work experience.
-      </p>
+      <div class="section-header">
+        <p class="section-kicker">Case Studies</p>
+        <h2 class="section-title">Professional Projects & Case Studies</h2>
+        <p class="section-subtitle">
+          Selected professional case studies based on operational, compliance, documentation, and managed service
+          responsibilities handled during professional work experience.
+        </p>
+      </div>
 
       <div class="grid-2">
         <div class="card">
           <h3>Anti-Financial Crime & KYC Operations Case Study</h3>
           <h4>Banking & Fintech Operations | AML/KYC | Transaction Monitoring</h4>
+
           <p>
             Supported compliance-driven operational processes across banking and financial technology environments,
-            focusing on AML/KYC verification, transaction monitoring, suspicious activity review, Customer Due Diligence,
-            Enhanced Due Diligence, fraud detection support, and case documentation.
+            focusing on AML/KYC verification, transaction monitoring, suspicious activity review, Customer Due
+            Diligence, Enhanced Due Diligence, fraud detection support, and case documentation.
           </p>
 
-          <br />
-          <strong>Key Scope:</strong>
-          <div>
+          <div class="tag-list">
             <span class="tag">AML/KYC Review</span>
             <span class="tag">CDD/EDD</span>
             <span class="tag">Transaction Monitoring</span>
             <span class="tag">Fraud Detection</span>
-            <span class="tag">Audit Trail Preparation</span>
+            <span class="tag">Audit Trail</span>
           </div>
         </div>
 
         <div class="card">
           <h3>Banking Managed Service Documentation Control</h3>
           <h4>Project Documentation | SLA Support | Jira | Operational Reporting</h4>
+
           <p>
             Led and supported project documentation control for banking managed service operations across Indonesia,
-            including document validation, project tracking, documentation governance, SLA support,
-            stakeholder coordination, and operational reporting for major banking clients.
+            including document validation, project tracking, documentation governance, SLA support, stakeholder
+            coordination, and operational reporting for major banking clients.
           </p>
 
-          <br />
-          <strong>Key Scope:</strong>
-          <div>
+          <div class="tag-list">
             <span class="tag">Document Control</span>
             <span class="tag">Project Administration</span>
             <span class="tag">SLA Monitoring</span>
@@ -566,57 +879,72 @@
   <!-- ACHIEVEMENT -->
   <section class="blue-section" id="achievement">
     <div class="container">
-      <h2 class="section-title">Achievement</h2>
-      <p class="section-subtitle">
-        Key achievements in operational quality, efficiency, compliance, and analysis accuracy.
-      </p>
+      <div class="section-header">
+        <p class="section-kicker">Achievement</p>
+        <h2 class="section-title">Key Achievements</h2>
+        <p class="section-subtitle">
+          Measurable achievements in operational quality, reporting efficiency, compliance support, and analysis
+          accuracy.
+        </p>
+      </div>
 
-      <div class="grid-2">
+      <div class="grid-3">
         <div class="card">
-          <h3>Operational Quality & Efficiency</h3>
+          <div class="metric">25%</div>
+          <h3>Reduced Audit Findings</h3>
           <p>
-            Successfully reduced administrative revisions and audit findings by 25% through structured quality control,
-            while improving administrative reporting speed by 30% using Jira project tracking.
+            Reduced administrative revisions and audit findings through structured quality control and documentation
+            verification.
           </p>
         </div>
 
         <div class="card">
-          <h3>High AML/KYC Compliance & Accuracy</h3>
+          <div class="metric">30%</div>
+          <h3>Improved Reporting Speed</h3>
           <p>
-            Ensured 99% compliance with AML/KYC regulatory standards for high-risk profiles and maintained a 98%
-            transaction analysis accuracy rate via Silverlake in a high-volume banking environment.
+            Improved administrative reporting speed by utilizing Jira project tracking and structured operational
+            monitoring.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="metric">99%</div>
+          <h3>AML/KYC Compliance Support</h3>
+          <p>
+            Supported high AML/KYC compliance standards for high-risk profile reviews and transaction monitoring
+            processes.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- TESTIMONIALS -->
-  <section id="testimonials">
+  <!-- PROFESSIONAL STRENGTHS -->
+  <section id="strengths">
     <div class="container">
-      <h2 class="section-title">Testimonials</h2>
-      <p class="section-subtitle">
-        Professional feedback highlighting ownership, analytical capability, attention to detail,
-        and structured work approach.
-      </p>
+      <div class="section-header">
+        <p class="section-kicker">Professional Strengths</p>
+        <h2 class="section-title">What I Bring</h2>
+        <p class="section-subtitle">
+          A practical combination of operational discipline, compliance awareness, documentation control, and
+          stakeholder coordination.
+        </p>
+      </div>
 
       <div class="grid-2">
         <div class="card">
-          <h3>Muhammad Nahar</h3>
-          <h4>Project Manager</h4>
+          <h3>Structured Work Approach</h3>
           <p>
-            Demonstrated excellent ownership in managing complex project documentation for a massive team of 290+
-            technicians. Consistently met strict SLA requirements, improved document accuracy, and ensured smooth
-            collaboration across departments.
+            Able to manage detailed documentation, monitor progress, track follow-ups, and ensure work outputs are
+            traceable, organized, and aligned with operational requirements.
           </p>
         </div>
 
         <div class="card">
-          <h3>Juwita Frihatsari</h3>
-          <h4>Compliance Supervisor</h4>
+          <h3>Risk & Compliance Awareness</h3>
           <p>
-            Showed strong analytical skills in CDD/EDD and risk-based transaction monitoring. Maintained high accuracy
-            under pressure, ensured AML/KYC regulatory compliance, and supported fraud prevention initiatives effectively.
+            Experienced in supporting AML/KYC, CDD/EDD, transaction monitoring, and suspicious activity review with
+            strong attention to accuracy, evidence, and documentation completeness.
           </p>
         </div>
       </div>
@@ -629,58 +957,37 @@
       <div class="contact-box">
         <h2>Let's Work Together</h2>
         <p>
-          Open for professional opportunities related to operations, risk, compliance,
-          project documentation, and managed service operations.
+          Open for professional opportunities related to operations, risk, compliance, project documentation,
+          managed service operations, and banking operational support.
         </p>
 
         <div class="contact-info">
-          <p>
-            <strong>Phone:</strong>
+          <div class="contact-item">
+            <strong>Phone</strong>
             <a href="tel:+6285179972560">+62-851-7997-2560</a>
-          </p>
+          </div>
 
-          <p>
-            <strong>WhatsApp:</strong>
+          <div class="contact-item">
+            <strong>WhatsApp</strong>
             <a href="https://wa.me/6285179972560" target="_blank">Chat via WhatsApp</a>
-          </p>
+          </div>
 
-          <p>
-            <strong>Email:</strong>
+          <div class="contact-item">
+            <strong>Email</strong>
             <a href="mailto:muhamlana04@gmail.com">muhamlana04@gmail.com</a>
-          </p>
+          </div>
 
-          <p>
-            <strong>LinkedIn:</strong>
-            <a href="https://www.linkedin.com/in/muhammadmaulana/" target="_blank">
-              linkedin.com/in/muhammadmaulana
-            </a>
-          </p>
+          <div class="contact-item">
+            <strong>LinkedIn</strong>
+            <a href="https://www.linkedin.com/in/muhammadmaulana/" target="_blank">linkedin.com/in/muhammadmaulana</a>
+          </div>
         </div>
 
-        <div class="btn-group" style="justify-content: center;">
-          <a href="mailto:muhamlana04@gmail.com" class="btn" style="background:#004aad; color:white; border-color:#004aad;">
-            Send Email
-          </a>
-
-          <a href="tel:+6285179972560" class="btn" style="background:white; color:#004aad; border-color:#004aad;">
-            Call Me
-          </a>
-
-          <a href="https://wa.me/6285179972560" target="_blank" class="btn" style="background:white; color:#004aad; border-color:#004aad;">
-            WhatsApp
-          </a>
-
-          <a href="CV-Muhammad-Maulana.pdf" target="_blank" class="btn" style="background:white; color:#004aad; border-color:#004aad;">
-            Download CV
-          </a>
-
-          <a href="Portfolio-Muhammad-Maulana.pdf" target="_blank" class="btn" style="background:white; color:#004aad; border-color:#004aad;">
-            Download Portfolio
-          </a>
-
-          <a href="https://www.linkedin.com/in/muhammadmaulana/" target="_blank" class="btn" style="background:white; color:#004aad; border-color:#004aad;">
-            View LinkedIn
-          </a>
+        <div class="btn-group contact-buttons">
+          <a href="mailto:muhamlana04@gmail.com" class="btn">Send Email</a>
+          <a href="https://wa.me/6285179972560" target="_blank" class="btn secondary">WhatsApp</a>
+          <a href="CV-Muhammad-Maulana.pdf" target="_blank" class="btn secondary">Download CV</a>
+          <a href="Portfolio-Muhammad-Maulana.pdf" target="_blank" class="btn secondary">Download Portfolio</a>
         </div>
       </div>
     </div>
