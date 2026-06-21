@@ -48,6 +48,7 @@
       line-height: 1.1;
       margin-bottom: 15px;
       text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
     .hero h2 {
@@ -61,6 +62,8 @@
       font-size: 17px;
       max-width: 650px;
       color: #eef4ff;
+      text-align: justify;
+      text-justify: inter-word;
     }
 
     .hero-card {
@@ -69,6 +72,19 @@
       border-radius: 24px;
       padding: 30px;
       box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+      text-align: center;
+    }
+
+    .profile-photo {
+      width: 230px;
+      height: 230px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 6px solid #004aad;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.18);
+      display: block;
+      margin: 0 auto 25px auto;
+      background: #e2e8f0;
     }
 
     .hero-card h3 {
@@ -79,6 +95,8 @@
     .hero-card p {
       color: #334155;
       font-size: 15px;
+      text-align: justify;
+      text-justify: inter-word;
     }
 
     .btn-group {
@@ -129,6 +147,8 @@
       max-width: 750px;
       color: #475569;
       margin-bottom: 35px;
+      text-align: justify;
+      text-justify: inter-word;
     }
 
     .grid-2 {
@@ -167,6 +187,8 @@
     .card p {
       color: #475569;
       font-size: 15px;
+      text-align: justify;
+      text-justify: inter-word;
     }
 
     .card ul {
@@ -234,6 +256,10 @@
       margin-bottom: 15px;
     }
 
+    .contact-box p {
+      color: #475569;
+    }
+
     .contact-info {
       margin: 25px 0;
       color: #334155;
@@ -242,6 +268,7 @@
 
     .contact-info p {
       margin-bottom: 10px;
+      text-align: center;
     }
 
     .contact-info a {
@@ -272,6 +299,17 @@
         font-size: 40px;
       }
 
+      .hero h2 {
+        font-size: 19px;
+      }
+
+      .hero p,
+      .hero-card p,
+      .section-subtitle,
+      .card p {
+        text-align: left;
+      }
+
       .section-title {
         font-size: 30px;
       }
@@ -286,6 +324,15 @@
 
       .contact-box {
         padding: 30px 20px;
+      }
+
+      .profile-photo {
+        width: 200px;
+        height: 200px;
+      }
+
+      .btn-group {
+        justify-content: flex-start;
       }
     }
   </style>
@@ -313,6 +360,8 @@
       </div>
 
       <div class="hero-card">
+        <img src="profile.png" alt="Muhammad Maulana Profile Photo" class="profile-photo">
+
         <h3>Professional Focus</h3>
         <p>
           Banking Operations, AML/KYC, CDD/EDD, Transaction Monitoring, Project Documentation,
@@ -603,7 +652,7 @@
           <p>
             <strong>LinkedIn:</strong>
             <a href="https://www.linkedin.com/in/muhammadmaulana/" target="_blank">
-              linkedin.com/in/muhammad-maulana
+              linkedin.com/in/muhammadmaulana
             </a>
           </p>
         </div>
