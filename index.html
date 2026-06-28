@@ -13,9 +13,7 @@
   <style>
     :root {
       --navy: #071936;
-      --navy-2: #0b244d;
       --blue: #004aad;
-      --blue-2: #0b63f6;
       --sky: #38bdf8;
       --gold: #f6c85f;
       --white: #ffffff;
@@ -58,7 +56,6 @@
       margin: auto;
     }
 
-    /* NAVBAR */
     .navbar {
       position: sticky;
       top: 0;
@@ -82,7 +79,6 @@
       gap: 12px;
       font-weight: 900;
       color: var(--navy);
-      letter-spacing: 0.2px;
     }
 
     .brand-mark {
@@ -108,10 +104,6 @@
       font-weight: 800;
     }
 
-    .nav-menu a {
-      transition: 0.25s ease;
-    }
-
     .nav-menu a:hover {
       color: var(--blue);
     }
@@ -124,7 +116,6 @@
       box-shadow: 0 10px 24px rgba(0, 74, 173, 0.22);
     }
 
-    /* HERO */
     .hero-section {
       position: relative;
       background:
@@ -145,17 +136,6 @@
         linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px);
       background-size: 48px 48px;
       opacity: 0.75;
-    }
-
-    .hero-section::after {
-      content: "";
-      position: absolute;
-      width: 620px;
-      height: 620px;
-      border-radius: 50%;
-      border: 1px solid rgba(255,255,255,0.14);
-      right: -230px;
-      top: 80px;
     }
 
     .hero-grid {
@@ -235,6 +215,7 @@
       background: var(--white);
       color: var(--blue);
       transition: 0.25s ease;
+      cursor: pointer;
     }
 
     .btn:hover {
@@ -261,28 +242,6 @@
       color: var(--text);
       box-shadow: var(--shadow-heavy);
       overflow: hidden;
-    }
-
-    .profile-panel::before {
-      content: "";
-      position: absolute;
-      top: -90px;
-      right: -90px;
-      width: 210px;
-      height: 210px;
-      border-radius: 50%;
-      background: rgba(0, 74, 173, 0.10);
-    }
-
-    .profile-panel::after {
-      content: "";
-      position: absolute;
-      bottom: -90px;
-      left: -90px;
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      background: rgba(56, 189, 248, 0.12);
     }
 
     .profile-content {
@@ -374,7 +333,6 @@
       line-height: 1.45;
     }
 
-    /* GENERAL */
     section {
       padding: 82px 0;
     }
@@ -492,7 +450,6 @@
       color: var(--white);
     }
 
-    /* ABOUT */
     .about-layout {
       display: grid;
       grid-template-columns: 0.9fr 1.1fr;
@@ -547,7 +504,6 @@
       text-justify: inter-word;
     }
 
-    /* IMPACT */
     .impact-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -587,7 +543,6 @@
       line-height: 1.7;
     }
 
-    /* CLIENTS */
     .clients {
       display: flex;
       flex-wrap: wrap;
@@ -605,7 +560,6 @@
       backdrop-filter: blur(10px);
     }
 
-    /* EXPERIENCE */
     .timeline {
       display: grid;
       gap: 24px;
@@ -668,7 +622,6 @@
       font-weight: 900;
     }
 
-    /* CASE STUDY */
     .case-card {
       border-top: 6px solid var(--blue);
     }
@@ -703,7 +656,6 @@
       line-height: 1.7;
     }
 
-    /* TOOLS */
     .tools-grid {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
@@ -743,7 +695,6 @@
       line-height: 1.65;
     }
 
-    /* SKILLS */
     .skill-cloud {
       display: flex;
       flex-wrap: wrap;
@@ -762,7 +713,6 @@
       font-weight: 900;
     }
 
-    /* ACHIEVEMENT */
     .big-number {
       font-size: 42px;
       font-weight: 950;
@@ -771,7 +721,6 @@
       margin-bottom: 10px;
     }
 
-    /* EDUCATION */
     .split-feature {
       display: grid;
       grid-template-columns: 0.85fr 1.15fr;
@@ -799,7 +748,6 @@
       text-justify: inter-word;
     }
 
-    /* CTA */
     .cta-band {
       background: linear-gradient(135deg, var(--navy), var(--blue));
       color: var(--white);
@@ -830,11 +778,6 @@
       gap: 12px;
     }
 
-    .cta-actions .btn {
-      border-color: var(--white);
-    }
-
-    /* CONTACT */
     .contact-box {
       background:
         radial-gradient(circle at top left, rgba(0,74,173,0.08), transparent 32%),
@@ -913,7 +856,6 @@
       font-size: 14px;
     }
 
-    /* RESPONSIVE */
     @media (max-width: 1000px) {
       .nav-wrap {
         flex-direction: column;
@@ -1037,12 +979,136 @@
         font-size: 28px;
       }
     }
+
+    @media print {
+      .navbar,
+      .hero-actions,
+      .cta-actions,
+      .contact-buttons,
+      footer {
+        display: none !important;
+      }
+
+      body {
+        background: white !important;
+        color: #000 !important;
+      }
+
+      .container {
+        width: 94% !important;
+        max-width: 100% !important;
+      }
+
+      section,
+      .hero-section {
+        padding: 28px 0 !important;
+        page-break-inside: avoid;
+      }
+
+      .hero-section,
+      .dark-section {
+        background: white !important;
+        color: #000 !important;
+      }
+
+      .hero-section::before,
+      .hero-section::after {
+        display: none !important;
+      }
+
+      .hero-grid,
+      .about-layout,
+      .grid-2,
+      .grid-3,
+      .hero-metrics,
+      .impact-grid,
+      .timeline-item,
+      .tools-grid,
+      .split-feature,
+      .contact-info {
+        grid-template-columns: 1fr !important;
+      }
+
+      .hero-title,
+      .hero-subtitle,
+      .hero-desc,
+      .section-title,
+      .section-subtitle,
+      .kicker,
+      .card h3,
+      .card h4,
+      .card p,
+      .card li,
+      .dark-section .card h3,
+      .dark-section .card h4,
+      .dark-section .card p,
+      .dark-section .card li,
+      .role-card h3,
+      .role-card h4,
+      .feature-title-card h3,
+      .feature-title-card p,
+      .executive-card h3,
+      .executive-card p {
+        color: #000 !important;
+      }
+
+      .card,
+      .profile-panel,
+      .executive-card,
+      .mini-card,
+      .impact-card,
+      .tool-card,
+      .contact-box,
+      .feature-title-card,
+      .cta-band,
+      .metric-card,
+      .period-box {
+        box-shadow: none !important;
+        border: 1px solid #bbb !important;
+        background: white !important;
+        color: #000 !important;
+        break-inside: avoid;
+      }
+
+      .profile-photo-wrap {
+        width: 150px !important;
+        height: 150px !important;
+        border: 3px solid #000 !important;
+      }
+
+      .profile-photo {
+        object-position: center -12px !important;
+        transform: scale(1.18) !important;
+      }
+
+      .metric-card strong,
+      .big-number,
+      .period-box strong {
+        color: #000 !important;
+      }
+
+      .metric-card span,
+      .period-box span,
+      .snapshot-item,
+      .role-focus span,
+      .client-badge,
+      .skill-cloud span,
+      .tag {
+        color: #000 !important;
+        background: white !important;
+        border: 1px solid #bbb !important;
+      }
+
+      a {
+        color: #000 !important;
+        text-decoration: none !important;
+      }
+    }
   </style>
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
   <nav class="navbar">
     <div class="container nav-wrap">
       <a href="#" class="brand">
@@ -1061,7 +1127,6 @@
     </div>
   </nav>
 
-  <!-- HERO -->
   <header class="hero-section">
     <div class="container">
       <div class="hero-grid">
@@ -1089,6 +1154,7 @@
           <div class="hero-actions">
             <a href="#projects" class="btn">View Case Studies</a>
             <a href="CV-Muhammad-Maulana.pdf" target="_blank" class="btn btn-outline">Download CV</a>
+            <a href="#" onclick="window.print(); return false;" class="btn btn-outline">Save Portfolio as PDF</a>
             <a href="#contact" class="btn btn-outline">Contact Me</a>
           </div>
         </div>
@@ -1139,7 +1205,6 @@
     </div>
   </header>
 
-  <!-- ABOUT -->
   <section id="about">
     <div class="container">
       <div class="section-head">
@@ -1192,7 +1257,6 @@
     </div>
   </section>
 
-  <!-- IMPACT -->
   <section id="impact">
     <div class="container">
       <div class="section-head">
@@ -1232,7 +1296,6 @@
     </div>
   </section>
 
-  <!-- CLIENTS -->
   <section class="dark-section">
     <div class="container">
       <div class="section-head">
@@ -1255,7 +1318,6 @@
     </div>
   </section>
 
-  <!-- EXPERIENCE -->
   <section class="dark-section" id="experience">
     <div class="container">
       <div class="section-head">
@@ -1379,7 +1441,6 @@
     </div>
   </section>
 
-  <!-- CASE STUDIES -->
   <section id="projects">
     <div class="container">
       <div class="section-head">
@@ -1437,7 +1498,6 @@
     </div>
   </section>
 
-  <!-- TOOLS -->
   <section id="tools">
     <div class="container">
       <div class="section-head">
@@ -1483,7 +1543,6 @@
     </div>
   </section>
 
-  <!-- SKILLS -->
   <section>
     <div class="container">
       <div class="section-head">
@@ -1540,7 +1599,6 @@
     </div>
   </section>
 
-  <!-- ACHIEVEMENT -->
   <section class="dark-section">
     <div class="container">
       <div class="section-head">
@@ -1573,27 +1631,25 @@
     </div>
   </section>
 
-  <!-- CTA -->
   <section>
     <div class="container">
       <div class="cta-band">
         <div>
           <h2>Looking for a reliable operations, risk, or compliance professional?</h2>
           <p>
-            View my CV, download the portfolio PDF, or contact me directly for opportunities related to banking operations,
+            View my CV, save this portfolio as PDF, or contact me directly for opportunities related to banking operations,
             anti-financial crime, KYC operations, project documentation, and managed service support.
           </p>
         </div>
 
         <div class="cta-actions">
           <a href="CV-Muhammad-Maulana.pdf" target="_blank" class="btn">Download CV</a>
-          <a href="#contact" class="btn btn-outline">Contact Me</a>
+          <a href="#" onclick="window.print(); return false;" class="btn btn-outline">Save Portfolio as PDF</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- EDUCATION -->
   <section id="education">
     <div class="container">
       <div class="split-feature">
@@ -1618,7 +1674,6 @@
     </div>
   </section>
 
-  <!-- ORGANIZATION -->
   <section class="dark-section" id="organization">
     <div class="container">
       <div class="split-feature">
@@ -1644,7 +1699,6 @@
     </div>
   </section>
 
-  <!-- CONTACT -->
   <section id="contact">
     <div class="container">
       <div class="contact-box">
@@ -1681,7 +1735,7 @@
           <a href="mailto:muhamlana04@gmail.com" class="btn">Send Email</a>
           <a href="https://wa.me/6285179972560" target="_blank" class="btn secondary">WhatsApp</a>
           <a href="CV-Muhammad-Maulana.pdf" target="_blank" class="btn secondary">Download CV</a>
-          <a href="Portfolio-Muhammad-Maulana.pdf" target="_blank" class="btn secondary">Download Portfolio</a>
+          <a href="#" onclick="window.print(); return false;" class="btn secondary">Save Portfolio as PDF</a>
           <a href="https://www.linkedin.com/in/muhammadmaulana/" target="_blank" class="btn secondary">LinkedIn</a>
         </div>
       </div>
