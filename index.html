@@ -981,6 +981,23 @@
     }
 
     @media print {
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        color-adjust: exact !important;
+      }
+
+      @page {
+        size: A4;
+        margin: 10mm;
+      }
+
+      html,
+      body {
+        background: var(--bg) !important;
+        color: var(--text) !important;
+      }
+
       .navbar,
       .hero-actions,
       .cta-actions,
@@ -989,118 +1006,229 @@
         display: none !important;
       }
 
-      body {
-        background: white !important;
-        color: #000 !important;
-      }
-
       .container {
         width: 94% !important;
-        max-width: 100% !important;
+        max-width: 1180px !important;
+        margin: auto !important;
       }
 
-      section,
-      .hero-section {
-        padding: 28px 0 !important;
+      section {
+        padding: 35px 0 !important;
+        break-inside: avoid;
         page-break-inside: avoid;
       }
 
-      .hero-section,
-      .dark-section {
-        background: white !important;
-        color: #000 !important;
+      .hero-section {
+        background:
+          radial-gradient(circle at 12% 18%, rgba(56, 189, 248, 0.22), transparent 28%),
+          radial-gradient(circle at 82% 12%, rgba(246, 200, 95, 0.18), transparent 24%),
+          linear-gradient(135deg, var(--navy) 0%, var(--blue) 52%, #061224 100%) !important;
+        color: var(--white) !important;
+        padding: 45px 0 !important;
+        min-height: auto !important;
+        break-inside: avoid;
+        page-break-inside: avoid;
       }
 
-      .hero-section::before,
-      .hero-section::after {
-        display: none !important;
+      .hero-section::before {
+        display: block !important;
       }
 
-      .hero-grid,
-      .about-layout,
-      .grid-2,
-      .grid-3,
-      .hero-metrics,
-      .impact-grid,
-      .timeline-item,
-      .tools-grid,
-      .split-feature,
-      .contact-info {
-        grid-template-columns: 1fr !important;
+      .hero-grid {
+        display: grid !important;
+        grid-template-columns: 1.15fr 0.85fr !important;
+        gap: 28px !important;
+        align-items: center !important;
       }
 
-      .hero-title,
+      .hero-title {
+        color: var(--white) !important;
+        font-size: 42px !important;
+      }
+
+      .hero-title span {
+        color: #dcecff !important;
+      }
+
       .hero-subtitle,
       .hero-desc,
-      .section-title,
-      .section-subtitle,
-      .kicker,
-      .card h3,
-      .card h4,
-      .card p,
-      .card li,
+      .eyebrow {
+        color: var(--white) !important;
+      }
+
+      .hero-desc {
+        font-size: 13px !important;
+        line-height: 1.7 !important;
+      }
+
+      .profile-panel {
+        display: block !important;
+        background: rgba(255,255,255,0.96) !important;
+        color: var(--text) !important;
+        box-shadow: var(--shadow-heavy) !important;
+        border: 1px solid rgba(255,255,255,0.72) !important;
+      }
+
+      .profile-photo-wrap {
+        width: 170px !important;
+        height: 170px !important;
+        border: 5px solid var(--blue) !important;
+        overflow: hidden !important;
+      }
+
+      .profile-photo {
+        display: block !important;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        object-position: center -16px !important;
+        transform: scale(1.22) !important;
+      }
+
+      .profile-panel h3 {
+        color: var(--blue) !important;
+      }
+
+      .profile-panel p,
+      .snapshot-item {
+        color: var(--text) !important;
+      }
+
+      .snapshot-item {
+        background: var(--soft) !important;
+        border: 1px solid #d6e7ff !important;
+      }
+
+      .hero-metrics {
+        display: grid !important;
+        grid-template-columns: repeat(4, 1fr) !important;
+        gap: 10px !important;
+        margin-top: 28px !important;
+      }
+
+      .metric-card {
+        background: rgba(255,255,255,0.12) !important;
+        border: 1px solid rgba(255,255,255,0.22) !important;
+        color: var(--white) !important;
+      }
+
+      .metric-card strong,
+      .metric-card span {
+        color: var(--white) !important;
+      }
+
+      .dark-section {
+        background:
+          radial-gradient(circle at top right, rgba(56, 189, 248, 0.18), transparent 30%),
+          linear-gradient(135deg, var(--navy), var(--blue)) !important;
+        color: var(--white) !important;
+      }
+
+      .dark-section .kicker,
+      .dark-section .section-title,
+      .dark-section .section-subtitle,
       .dark-section .card h3,
       .dark-section .card h4,
       .dark-section .card p,
-      .dark-section .card li,
-      .role-card h3,
-      .role-card h4,
-      .feature-title-card h3,
-      .feature-title-card p,
-      .executive-card h3,
-      .executive-card p {
-        color: #000 !important;
+      .dark-section .card ul,
+      .dark-section .card li {
+        color: var(--white) !important;
       }
 
       .card,
-      .profile-panel,
       .executive-card,
       .mini-card,
       .impact-card,
       .tool-card,
       .contact-box,
       .feature-title-card,
-      .cta-band,
-      .metric-card,
-      .period-box {
-        box-shadow: none !important;
-        border: 1px solid #bbb !important;
-        background: white !important;
-        color: #000 !important;
+      .cta-band {
+        box-shadow: var(--shadow) !important;
         break-inside: avoid;
+        page-break-inside: avoid;
       }
 
-      .profile-photo-wrap {
-        width: 150px !important;
-        height: 150px !important;
-        border: 3px solid #000 !important;
+      .executive-card,
+      .feature-title-card,
+      .cta-band {
+        background: linear-gradient(135deg, var(--navy), var(--blue)) !important;
+        color: var(--white) !important;
       }
 
-      .profile-photo {
-        object-position: center -12px !important;
-        transform: scale(1.18) !important;
+      .executive-card h3,
+      .executive-card p,
+      .feature-title-card h3,
+      .feature-title-card p,
+      .cta-band h2,
+      .cta-band p {
+        color: var(--white) !important;
       }
 
-      .metric-card strong,
-      .big-number,
-      .period-box strong {
-        color: #000 !important;
+      .card {
+        background: var(--white) !important;
+        border: 1px solid var(--border) !important;
       }
 
-      .metric-card span,
-      .period-box span,
+      .card h3 {
+        color: var(--blue) !important;
+      }
+
+      .card h4 {
+        color: var(--navy) !important;
+      }
+
+      .card p,
+      .card li {
+        color: var(--text) !important;
+      }
+
+      .dark-section .card {
+        background: rgba(255,255,255,0.11) !important;
+        border: 1px solid rgba(255,255,255,0.22) !important;
+      }
+
+      .impact-icon,
+      .tool-icon,
+      .case-label {
+        background: var(--blue) !important;
+        color: var(--white) !important;
+      }
+
+      .case-block,
       .snapshot-item,
-      .role-focus span,
+      .contact-item {
+        background: var(--bg) !important;
+        border: 1px solid var(--border) !important;
+      }
+
       .client-badge,
+      .role-focus span {
+        background: rgba(255,255,255,0.13) !important;
+        color: var(--white) !important;
+        border: 1px solid rgba(255,255,255,0.24) !important;
+      }
+
       .skill-cloud span,
       .tag {
-        color: #000 !important;
-        background: white !important;
-        border: 1px solid #bbb !important;
+        background: var(--soft) !important;
+        color: var(--blue) !important;
+      }
+
+      .big-number,
+      .period-box strong {
+        color: var(--gold) !important;
+      }
+
+      .period-box {
+        background: rgba(255,255,255,0.14) !important;
+        border: 1px solid rgba(255,255,255,0.22) !important;
+      }
+
+      .period-box span {
+        color: #dbeafe !important;
       }
 
       a {
-        color: #000 !important;
         text-decoration: none !important;
       }
     }
